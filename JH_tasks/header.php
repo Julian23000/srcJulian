@@ -39,7 +39,11 @@
                                 
                                 <a class="nav-link" href="ex1.php">Exercise 1</a>
                                 <a class="nav-link" href="ex2.php">Exercise 2</a>
-                                
+                                <a class="nav-link" href="ex2.php">Exercise 3</a>
+                                <a class="nav-link" href="ex2.php">Exercise 4</a>
+                                <a class="nav-link" href="ex2.php">Exercise 5</a>
+                                <a class="nav-link" href="ex2.php">Exercise 6</a>
+                                <a class="nav-link" href="ex2.php">Exercise 7</a>
                             </div>
                         </div>
                     </div>
