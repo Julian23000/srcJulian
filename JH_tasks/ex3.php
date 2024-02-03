@@ -54,4 +54,15 @@ $str2 = "fellow students";
 echo $str1 . $str2;
 ?>
 
+<h4>Number Addition: Write a script to add up the numbers: 298, 234, 46. Use variables to store these numbers and an echo statement to output your answer.</h3>
+
+<?php
+$number1 = 298;
+$number2 = 234;
+$number3 = 46;
+
+echo $number1 . $number2 . $number3
+?>
+
+
 <?php include 'footer.php'; ?>
