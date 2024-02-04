@@ -12,6 +12,8 @@ include 'header.php'; ?>
     Select Color: <input type="color" name="color"> <br></br>
     <input type="submit" name="submit"> <br></br>
 
+    <br></br>
+
 <h2>HTML Table: Prepare a simple HTML table and apply Bootstrap styles to it. Note, you have already done a table in Exercise</h2>
 
 <table class="table">
@@ -44,6 +46,8 @@ include 'header.php'; ?>
   </tbody>
 </table>
 
+<br></br>
+
 <h3> Write a PHP script with two string variables ($str1 = "Hello"; $str2 = "World";). Join them together and print the length of the string.</h3>
 
 <?php
@@ -53,6 +57,8 @@ $str2 = "fellow students";
 
 echo $str1 . $str2;
 ?>
+
+<br></br>
 
 <h4>Number Addition: Write a script to add up the numbers: 298, 234, 46. Use variables to store these numbers and an echo statement to output your answer.</h3>
 
@@ -64,5 +70,20 @@ $number3 = 46;
 echo $number1 . $number2 . $number3
 ?>
 
+<br></br>
+
+<h5>Browser Detection: Write a PHP script to detect the browser being used to view your pages. Hint: Use predefined variables: $_SERVER</h5>
+
+<?php
+echo $_SERVER['HTTP_USER_AGENT'];
+?>
+
+<br></br>
+
+<h6>File Modification Time: Write a PHP script in the footer section of your universal footer to display the last modification time of a file.</h6>
+
+<?php
+echo $_SERVER['filename'];
+?>
 
 <?php include 'footer.php'; ?>
