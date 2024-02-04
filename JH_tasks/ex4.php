@@ -1,4 +1,6 @@
 <?php 
-$title = "Exercise 2";
+$title = "Exercise 4";
 include 'header.php'; ?>
 
+
+<?php include 'footer.php'; ?>

@@ -83,7 +83,16 @@ echo $_SERVER['HTTP_USER_AGENT'];
 <h6>File Modification Time: Write a PHP script in the footer section of your universal footer to display the last modification time of a file.</h6>
 
 <?php
-echo $_SERVER['filename'];
+
+$currentPage= $_SERVER['SCRIPT_NAME'];
+            $pageName = basename($currentPage);
+            $lastModification = filemtime($pageName);
+            $dateModified = date('Y-m-d H:i:s', $lastModification);
 ?>
+
+<h7><?php echo 'Page: ' . $pageName ?> </h7> 
+
+<h8><?php echo 'Latest modification done: ' . $dateModified ?> </h8>
+
 
 <?php include 'footer.php'; ?>
