@@ -72,6 +72,8 @@ switch ($month) {
 
 <br></br>
 
+<h4>While Loop: Write a PHP script that will print all the numbers from 1 to n. (use form to get user input)</h4>
+
 <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
         Enter a number: <input type="number" name="number" required>
         <input type="submit" name="submit" value="Submit">
