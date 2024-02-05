@@ -16,8 +16,6 @@ include 'header.php'; ?>
 
 <br></br>
 
-<h2>Switch Case: Write a PHP script that gets the current month and prints one of the following responses, depending on whether it's August or not</h2>
-
 <?php 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Name = $_POST["Name"];
@@ -38,7 +36,7 @@ echo "<p>$result</p>";
 
 <br></br>
 
-<h3>For Loop: Write a PHP script that will print the multiplication table of a number (n, use form to get user input).</h3>
+<h2>Switch Case: Write a PHP script that gets the current month and prints one of the following responses, depending on whether it's August or not</h2>
 
 <?php
 $month = date("F");
@@ -54,7 +52,7 @@ switch ($month) {
 
 <br></br>
 
-<h4>While Loop: Write a PHP script that will print all the numbers from 1 to n. (use form to get user input)</h4>
+<h3>While Loop: Write a PHP script that will print all the numbers from 1 to n. (use form to get user input)</h3>
 
 <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
         Enter a number: <input type="number" Name="number" required>
@@ -71,6 +69,28 @@ switch ($month) {
         }
     }
     ?>
+
+<br></br>
+
+<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        Enter a number: <input type="number" name="number" required>
+        <input type="submit" name="submit" value="Submit">
+    </form>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $number = $_POST['number'];
+        $i = 1;
+
+        echo "<h2>Numbers from 1 to $number:</h2>";
+        while ($i <= $number) {
+            echo "$i ";
+            $i++;
+        }
+    }
+    ?>
+
+
 
 <br></br>
 
