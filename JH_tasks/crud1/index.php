@@ -1,5 +1,6 @@
 <?php
-include 'individTasks/header.php';
+$title = "Create Data";
+include '../individual/header.php';
 ?>
 
 <h2>Input Your Information Below:</h2>
@@ -36,3 +37,7 @@ include 'individTasks/header.php';
     </div>
     <button type="submit" class="btn btn-primary" name="submit">Submit</button>
 </form>
+
+<?php
+include '../individual/footer.php';
+?>
