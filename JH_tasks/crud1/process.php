@@ -1,14 +1,30 @@
 <?php
-$servername = "your_servername"; // Replace with your MySQL server hostname
-$username = "your_username";     // Replace with your MySQL username
-$password = "your_password";     // Replace with your MySQL password
-$dbname = "your_database";       // Replace with the name of your MySQL database
+//what to do with the data
 
-// Create a database connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if(isset($_POST['submit']))
+{
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
+    $city = $_POST['city'];
+    $groupid = $_POST['groupid'];
 }
+
+//connect to the database server
+include 'db.php';
+
+//write sql statement to insert data
+$sql = "insert into studentsinfo(first_name, last_name, city, groupid)
+        values ('$fname', '$lname', '$city', '$groupid')";
+
+if ($conn->query($sql)===TRUE)
+{
+    echo "Your data was recorded";
+}
+
+else
+{
+    echo "Error: " .sql ."<br>" . $conn->error;
+}
+
+$conn->close();
 ?>
