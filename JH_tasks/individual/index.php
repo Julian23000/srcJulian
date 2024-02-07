@@ -1,6 +1,6 @@
 <?php
 $title = "Create Data";
-include '../individual/header.php';
+include 'header.php';
 ?>
 
 <h2>Input Your Information Below:</h2>
@@ -39,5 +39,5 @@ include '../individual/header.php';
 </form>
 
 <?php
-include '../individual/footer.php';
+include 'footer.php';
 ?>

@@ -1,4 +1,6 @@
 <?php
+include 'header.php';
+
 //what to do with the data
 
 if(isset($_POST['submit']))
@@ -27,4 +29,6 @@ else
 }
 
 $conn->close();
+
+include 'footer.php';
 ?>
