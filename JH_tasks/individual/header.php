@@ -43,7 +43,7 @@
                                 <a class="nav-link" href="ex4.php">Exercise 4</a>
                                 <a class="nav-link" href="ex2.php">Exercise 5</a>
                                 <a class="nav-link" href="ex2.php">Exercise 6</a>
-                                <a class="nav-link" href="../crud1/index.php">Exercise 7</a>
+                                <a class="nav-link" href="index.php">Exercise 7</a>
                             </div>
                         </div>
                     </div>
