@@ -1,8 +1,8 @@
 <?php
-$servername = "your_servername"; // Replace with your MySQL server hostname
-$username = "your_username";     // Replace with your MySQL username
-$password = "your_password";     // Replace with your MySQL password
-$dbname = "your_database";       // Replace with the name of your MySQL database
+$servername = "php24-db-1"; // Replace with your MySQL server hostname
+$username = "app1";     // Replace with your MySQL username
+$password = "LiisiKuusk6";     // Replace with your MySQL password
+$dbname = "app1";       // Replace with the name of your MySQL database
 
 // Create a database connection
 $conn = new mysqli($servername, $username, $password, $dbname);
