@@ -1,5 +1,4 @@
 <?php
-
 include 'db.php';
 // SQL query to retrieve data from the 'studentsinfo' table
 $sql = "SELECT * FROM studentsinfo";
