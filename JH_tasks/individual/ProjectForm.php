@@ -2,19 +2,20 @@
 $title = "Form Validation Example";
 include 'header.php';
 ?>
-
+<div id="Centering">
 <form action="" method="post">
 Name: <input type="text" name="fname" required minlength="3" maxlength="30" id="name"> <br>
 <span id ="nameError"></span><br>
 Email: <input type="email" name="email" required id="email"> <br>
 <span id ="emailError"></span><br>
-Age: <input type="number" name="age" min="18" max="100" id="age"> <br>
+Age: <input type="number" name="age" min="16" max="100" id="age"> <br>
 <span id ="ageError"></span><br>
 <div id="EditVertical">
 Comment: </div><textarea name="comment" id="comment" rows="4" cols="50"></textarea> <br>
 
 <button type="submit" name="regSub"> Submit</button>
 </form>
+</div>
 
 <script>
 function validateName() {
