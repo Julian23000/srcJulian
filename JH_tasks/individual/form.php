@@ -65,8 +65,6 @@ document.getElementById("name").addEventListener("input", validateName);
 document.getElementById("email").addEventListener("input", validateEmail);
 document.getElementById("password").addEventListener("input", validatePassword);
 
-
-
 </script>
 
 
