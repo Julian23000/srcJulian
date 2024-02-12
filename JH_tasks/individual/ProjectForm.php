@@ -1,26 +1,64 @@
-<?php 
-$title = "Picture Submission";
-include 'header.php'; ?>
+<?php
+$title = "Form Validation Example";
+include 'header.php';
+?>
 
+<form action="" method="post">
+Name: <input type="text" name="fname" required minlength="3" maxlength="30" id="name"> <br>
+<span id ="nameError"></span><br>
+Email: <input type="email" name="email" required id="email"> <br>
+<span id ="emailError"></span><br>
+Age: <input type="number" name="age" min="18" max="100" id="age"> <br>
+<span id ="ageError"></span><br>
+<div id="EditVertical">
+Comment: </div><textarea name="comment" id="comment" rows="4" cols="50"></textarea> <br>
 
-
-<form>
-  <div class="mb-3">
-    <label for="exampleInputName1" class="form-label">Name</label>
-    <input type="Name" class="form-control" id="exampleInputName1" aria-describedby="NameHelp">
-    <div id="emailHelp" class="form-text">Your name will not be mentioned in the published picstures!</div>
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email</label>
-    <input type="email" class="form-control" id="exampleInputEmail1">
-  </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+<button type="submit" name="regSub"> Submit</button>
 </form>
 
+<script>
+function validateName() {
+    const name = document.getElementById("name").value;
+    const nameError = document.getElementById("nameError");
+
+    if (name.length < 3 || name.length > 20) {
+        nameError.innerHTML = "Name must be between 3 & 20 characters";
+        return false;
+    } else {
+        nameError.innerHTML = "";
+        return true;
+    }
+}
+
+function validateEmail() {
+    const email = document.getElementById("email").value;
+    const emailError = document.getElementById("emailError");
+
+    if (email === "" || !email.includes("@")) {
+        emailError.innerHTML = "Please enter a valid email address";
+        return false;
+    } else {
+        emailError.innerHTML = "";
+        return true;
+    }
+}
+
+function validateAge() {
+    const age = document.getElementById("age").value;
+    
+}
+
+// event listeners for real time validation
+document.getElementById("name").addEventListener("input", validateName);
+document.getElementById("email").addEventListener("input", validateEmail);
+
+</script>
 
 
-<?php include 'footer.php'; ?>
+
+
+
+
+<?php
+include 'footer.php';
+?>
