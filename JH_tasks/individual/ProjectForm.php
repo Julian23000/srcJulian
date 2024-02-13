@@ -15,10 +15,13 @@ include 'header.php';
     <input type="email" name="email" id="email" class="form-control" required>
     <span id="emailError"></span>
   </div>
-    <div class="mb-3">
-    <label for="exampleInputEmail">
-  <button type="submit" class="btn btn-primary" >Submit Here!</button>
-</div>
+  <div class="mb-3">
+  <form action="upload.php" method="post" enctype="multipart/form-data">
+  Upload your image here!:
+  <input type="file" name="fileToUpload" id="fileToUpload"> <br></br>
+  <input type="submit" value="Submit here!" name="submit">
+  </form>
+  </div>
 </form>
 </div>
 

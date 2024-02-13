@@ -3,59 +3,61 @@ $title = "Form Validation Example";
 include 'header.php';
 ?>
 
-<div class="row" id="galleryForm">
-  <form onsubmit="return validateForm()">
-    <div class="mb-3">
-      <label for="name" class="form-label">Full name</label>
-      <input type="text" id="name" name="name" class="form-control" required minlength="3" maxlength="20">
-      <span id="nameError"></span>
-    </div>
-    <div class="mb-3">
-      <label for="exampleInputEmail" class="form-label">Your Email</label>
-      <input type="email" name="email" id="email" class="form-control" required>
-      <span id="emailError"></span>
-    </div>
-    <div class="mb-3">
-      <button type="submit" class="btn btn-primary">Submit Here!</button>
-    </div>
-  </form>
-</div>
+<form action="upload.php" method="post" enctype="multipart/form-data">
+  Select image to upload:
+  <input type="file" name="fileToUpload" id="fileToUpload">
+  <input type="submit" value="Upload Image" name="submit">
+</form>
 
-<script>
-  function validateName() {
-    const name = document.getElementById("name").value;
-    const nameError = document.getElementById("nameError");
+<?php
+$target_dir = "uploads/";
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$uploadOk = 1;
+$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
-    if (name.length < 3 || name.length > 20) {
-      nameError.innerHTML = "Name must be between 3 and 20 characters.";
-      return false;
-    } else {
-      nameError.innerHTML = "";
-      return true;
-    }
+// Check if image file is a actual image or fake image
+if(isset($_POST["submit"])) {
+  $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+  if($check !== false) {
+    echo "File is an image - " . $check["mime"] . ".";
+    $uploadOk = 1;
+  } else {
+    echo "File is not an image.";
+    $uploadOk = 0;
   }
+}
 
-  function validateEmail() {
-    const email = document.getElementById("email").value;
-    const emailError = document.getElementById("emailError");
+// Check if file already exists
+if (file_exists($target_file)) {
+  echo "Sorry, file already exists.";
+  $uploadOk = 0;
+}
 
-    if (email === "" || !email.includes("@")) {
-      emailError.innerHTML = "Please enter a valid email address";
-      return false;
-    } else {
-      emailError.innerHTML = "";
-      return true;
-    }
+// Check file size
+if ($_FILES["fileToUpload"]["size"] > 500000) {
+  echo "Sorry, your file is too large.";
+  $uploadOk = 0;
+}
+
+// Allow certain file formats
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+&& $imageFileType != "gif" ) {
+  echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+  $uploadOk = 0;
+}
+
+// Check if $uploadOk is set to 0 by an error
+if ($uploadOk == 0) {
+  echo "Sorry, your file was not uploaded.";
+// if everything is ok, try to upload file
+} else {
+  if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+    echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+  } else {
+    echo "Sorry, there was an error uploading your file.";
   }
-
-  function validateForm() {
-    return validateName() && validateEmail();
-  }
-
-  // Event listeners for real-time validation
-  document.getElementById("name").addEventListener("input", validateName);
-  document.getElementById("email").addEventListener("input", validateEmail);
-</script>
+}
+?>
 
 <?php
 include 'footer.php';
