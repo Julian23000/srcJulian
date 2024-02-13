@@ -4,15 +4,16 @@ include 'header.php';
 ?>
 
 <div class="row" id="galleryForm">
-<form onsubmit="return validateName()">
+<form>
   <div class="mb-3">
-    <label for="exampleInputName" class="form-label">Name</label>
-    <input type="text" class="form-control" id="exampleInputName" required minlength="3" maxlength="30" aria-describedby="NameHelp">
-    <div id="NameHelp" class="form-text">We'll never share your email with anyone else.</div>
+    <label for="name" class="form-label">Name</label>
+    <input type="text" id="name" name="name" class="form-control" required minlength="3" maxlength="20">
+    <span id="nameError"></span>
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail" class="form-label">Email</label>
-    <input type="text" class="form-control" id="exampleInputEmail">
+    <input type="email" name="email" id="email" class="form-control" required>
+    <span id="emailError"></span>
   </div>
     <div class="mb-3">
     <label for="exampleInputEmail">
@@ -23,13 +24,16 @@ include 'header.php';
 
 <script>
 function validateName() {
-    const name = document.getElementById("exampleInputName").value;
-    if (name.length < 3 || name.length > 20) {
-        alert("Please enter a name between 3 and 20 letters");
-        return false;
-    } else {
-        return true;
-    }
+        const name = document.getElementById("name").value;
+        const nameError = document.getElementById("nameError");
+        // Check if the length of the name is between 3 and 20 characters
+        if (name.length < 3 || name.length > 20) {
+            nameError.innerHTML = "Name must be between 3 & 20 characters.";
+            return false;
+        } else {
+            nameError.innerHTML = "";
+            return true;
+}
 }
 
 function validateEmail() {
@@ -43,11 +47,6 @@ function validateEmail() {
         emailError.innerHTML = "";
         return true;
     }
-}
-
-function validateAge() {
-    const age = document.getElementById("age").value;
-    
 }
 
 // event listeners for real time validation
