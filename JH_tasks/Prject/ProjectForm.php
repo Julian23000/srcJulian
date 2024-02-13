@@ -1,6 +1,6 @@
 <?php
 $title = "Form Validation Example";
-include 'header.php';
+include '../individual/header.php';
 ?>
 
 <div class="row" id="galleryForm">
@@ -66,5 +66,5 @@ document.getElementById("email").addEventListener("input", validateEmail);
 
 
 <?php
-include 'footer.php';
+include '../individual/footer.php';
 ?>
