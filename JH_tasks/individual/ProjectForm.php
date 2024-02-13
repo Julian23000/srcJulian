@@ -6,18 +6,19 @@ include 'header.php';
 <div class="row" id="galleryForm">
 <form>
   <div class="mb-3">
-    <label for="name" class="form-label">Name</label>
+    <label for="name" class="form-label">Full name</label>
     <input type="text" id="name" name="name" class="form-control" required minlength="3" maxlength="20">
     <span id="nameError"></span>
   </div>
   <div class="mb-3">
-    <label for="exampleInputEmail" class="form-label">Email</label>
+    <label for="exampleInputEmail" class="form-label">Your Email</label>
     <input type="email" name="email" id="email" class="form-control" required>
     <span id="emailError"></span>
   </div>
     <div class="mb-3">
     <label for="exampleInputEmail">
-  <button type="submit" class="btn btn-primary" >Submit</button>
+  <button type="submit" class="btn btn-primary" >Submit Here!</button>
+</div>
 </form>
 </div>
 

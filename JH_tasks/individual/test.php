@@ -4,37 +4,39 @@ include 'header.php';
 ?>
 
 <div class="row" id="galleryForm">
-  <form onsubmit="return validateName()">
+  <form onsubmit="return validateForm()">
     <div class="mb-3">
-      <label for="exampleInputName" class="form-label">Name</label>
-      <input type="text" class="form-control" id="exampleInputName" required minlength="3" maxlength="30" aria-describedby="NameHelp">
-      <div id="NameHelp" class="form-text">We'll never share your email with anyone else.</div>
+      <label for="name" class="form-label">Full name</label>
+      <input type="text" id="name" name="name" class="form-control" required minlength="3" maxlength="20">
+      <span id="nameError"></span>
     </div>
     <div class="mb-3">
-      <label for="exampleInputEmail" class="form-label">Email</label>
-      <input type="text" class="form-control" id="exampleInputEmail">
+      <label for="exampleInputEmail" class="form-label">Your Email</label>
+      <input type="email" name="email" id="email" class="form-control" required>
+      <span id="emailError"></span>
     </div>
     <div class="mb-3">
-      <label for="age" class="form-label">Age</label>
-      <input type="text" class="form-control" id="age">
+      <button type="submit" class="btn btn-primary">Submit Here!</button>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
 
 <script>
   function validateName() {
-    const name = document.getElementById("exampleInputName").value;
+    const name = document.getElementById("name").value;
+    const nameError = document.getElementById("nameError");
+
     if (name.length < 3 || name.length > 20) {
-      alert("Please enter a name between 3 and 20 letters");
+      nameError.innerHTML = "Name must be between 3 and 20 characters.";
       return false;
     } else {
+      nameError.innerHTML = "";
       return true;
     }
   }
 
   function validateEmail() {
-    const email = document.getElementById("exampleInputEmail").value;
+    const email = document.getElementById("email").value;
     const emailError = document.getElementById("emailError");
 
     if (email === "" || !email.includes("@")) {
@@ -46,9 +48,13 @@ include 'header.php';
     }
   }
 
+  function validateForm() {
+    return validateName() && validateEmail();
+  }
+
   // Event listeners for real-time validation
-  document.getElementById("exampleInputName").addEventListener("input", validateName);
-  document.getElementById("exampleInputEmail").addEventListener("input", validateEmail);
+  document.getElementById("name").addEventListener("input", validateName);
+  document.getElementById("email").addEventListener("input", validateEmail);
 </script>
 
 <?php
