@@ -1,0 +1,14 @@
+<?php
+
+if(isset($_FILES['imageToUpload'])){
+  move_uploaded_file($_FILES['imageToUpload']['tmp_name'], "images/". $_FILES['imageToUpload']['name']);
+}
+else{
+    echo "image not found!";
+}
+ 
+?>
+
+<?php
+move_uploaded_file(tmp_name, filepath.withName);
+?>
