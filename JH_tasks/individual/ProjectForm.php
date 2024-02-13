@@ -64,6 +64,7 @@ document.getElementById("email").addEventListener("input", validateEmail);
 
 
 
+
 <?php
 include 'footer.php';
 ?>
