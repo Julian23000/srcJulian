@@ -7,7 +7,7 @@ include 'header.php';
 <form>
   <div class="mb-3">
     <label for="name" class="form-label">Full name</label>
-    <input type="text" id="name" name="name" class="form-control" required minlength="3" maxlength="25">
+    <input type="text" id="name" name="name" class="form-control" required minlength="3" maxlength="20">
     <span id="nameError"></span>
   </div>
   <div class="mb-3">
